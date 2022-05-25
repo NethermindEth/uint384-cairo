@@ -1,6 +1,6 @@
-# uint384
+# uint384-cairo
 
-Implementation of basic operations between unsigned 384-bit integers. Some operations are also supported for signed 384-bit integers.  (Note that Cairo's native "integer" is of 251 bits)
+Cairo implementation of basic operations between unsigned 384-bit integers. Some operations are also supported for signed 384-bit integers.  (Note that Cairo's native "integer" is of 251 bits)
 
 **NOTE**: Hints are pending whitelisting by StarkWare
 
