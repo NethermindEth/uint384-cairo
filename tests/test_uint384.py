@@ -150,8 +150,6 @@ async def test_bitwise_xor_and_or(x, y, uint384_contract):
     y=st.integers(min_value=1, max_value=2**384 - 1),
 )
 @settings(deadline=None)
-# TODO: redo this test
-# @pytest.mark.skip
 @pytest.mark.asyncio
 async def test_left_and_right_bitwise_shift(x, y, uint384_contract):
 
@@ -176,18 +174,6 @@ async def test_left_and_right_bitwise_shift(x, y, uint384_contract):
     python_result = (x >> min(y, 384)) % 2**384
     assert result == python_result
 
-
-# Auxiliary function used in the test above
-def modular_multiplication(a, b, mod):
-    res = 0
-    a = a % mod
-    while b != 0:
-        print(b)
-        if b % 2 == 1:
-            res = (res + a) % mod
-        a = (2 * a) % mod
-        b >>= 1
-    return res
 
 
 @given(
