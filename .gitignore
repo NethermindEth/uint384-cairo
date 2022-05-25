@@ -5,6 +5,9 @@
 artifacts/
 lib/uint256.cairo
 
+.hypothesis/
+*.__pycache__
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
