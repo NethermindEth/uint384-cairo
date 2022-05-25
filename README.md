@@ -1,6 +1,6 @@
-# uint384
+# uint384-cairo
 
-Implementation of basic operations between unsigned 384-bit integers. Some operations are also supported for signed 384-bit integers.  (Note that Cairo's native "integer" is of 251 bits)
+Cairo implementation of basic operations between unsigned 384-bit integers. Some operations are also supported for signed 384-bit integers.  (Note that Cairo's native "integer" is of 251 bits)
 
 **NOTE**: Hints are pending whitelisting by StarkWare
 
@@ -32,7 +32,7 @@ We extend this to 384 bits by defining the struct
 
 ## Namespace
 
-We use a namespace so that all library functions can be imported at once with `from <directory>.uint384.cairo import uint384` and functions can be called with the syntax `uint384.<function_name>` (this differs from the original `uint256`)
+We use a namespace so that all library functions can be imported at once with `from <library directory>.uint384 import uint384` and functions can be called with the syntax `uint384.<function_name>` (this differs from the original `uint256`)
 
 ## Testing
 
