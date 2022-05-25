@@ -176,39 +176,6 @@ async def test_left_and_right_bitwise_shift(x, y, uint384_contract):
     python_result = (x >> min(y, 384)) % 2**384
     assert result == python_result
 
-def a(x, y):
-    while y:
-        x = (x << 1) % 2**384
-        y -= 1
-    return x
-
-
-@pytest.mark.asyncio
-async def test_left_and_right_bitwise_shift_specific(uint384_contract):
-
-    x = 47763
-    y = 88904878750163828814
-    print(x, y)
-
-    x_split = split(x, num_bits_shift=128, length=3)
-    y_split = split(y, num_bits_shift=128, length=3)
-
-    # shl test
-    execution_info = await uint384_contract.uint384_shl(x_split, y_split).call()
-    result_split = execution_info.result
-    result = pack(result_split[0], num_bits_shift=128)
-    # Note that if y >= 384 then (x << y) % 2**384 == 0, hence we can clip y to be between 0 and 384
-    # Otherwise we will be getting python overflows here
-    python_result = (x << min(y, 384)) % 2**384
-    assert result == python_result
-
-    # shr test
-    execution_info = await uint384_contract.uint384_shr(x_split, y_split).call()
-    result_split = execution_info.result
-    result = pack(result_split[0], num_bits_shift=128)
-    python_result = (x >> min(y, 384)) % 2**384
-    assert result == python_result
-
 
 # Auxiliary function used in the test above
 def modular_multiplication(a, b, mod):
