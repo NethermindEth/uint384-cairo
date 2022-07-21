@@ -118,7 +118,7 @@ end
 func uint384_and{bitwise_ptr : BitwiseBuiltin*, range_check_ptr}(a : Uint384, b : Uint384) -> (
     res : Uint384
 ):
-    let (res) = uint384_lib.uint384_and(a, b)
+    let (res) = uint384_lib.bit_and(a, b)
     return (res)
 end
 

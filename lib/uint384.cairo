@@ -383,7 +383,7 @@ namespace uint384_lib:
     end
 
     # Computes the bitwise AND of 2 uint256 integers.
-    func uint384_and{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(a : Uint384, b : Uint384) -> (
+    func bit_and{range_check_ptr, bitwise_ptr : BitwiseBuiltin*}(a : Uint384, b : Uint384) -> (
         res : Uint384
     ):
         let (d0) = bitwise_and(a.d0, b.d0)
